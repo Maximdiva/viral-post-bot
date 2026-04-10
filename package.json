@@ -1,0 +1,17 @@
+{
+  "name": "viral-post-bot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "twitter-api-v2": "^1.17.0",
+    "groq-sdk": "^0.3.3"
+  }
+}
