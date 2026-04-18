@@ -2,7 +2,7 @@
   const { searchParams } = new URL(request.url)
   const topic = searchParams.get('topic') || 'Burna Boy'
   try {
-    const query = encodeURIComponent(`${topic} -is:retweet lang:en`)
+    const query = encodeURIComponent(`${topic} -is:retweet`)
     const res = await fetch(
       `https://twitter-v24.p.rapidapi.com/search/?query=${query}&section=top&limit=5`,
       {
