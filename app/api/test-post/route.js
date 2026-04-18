@@ -43,6 +43,8 @@ export async function POST(request) {
         topic: thread.topic,
         vibe: thread.vibe,
         tweets: thread.tweets,
+        tweetsFormatted: thread.tweets.join('\n\n---\n\n'),
+    note: 'Set dry_run: false to actually post this thread',
         note: 'Set dry_run: false to actually post this thread',
       })
     }
