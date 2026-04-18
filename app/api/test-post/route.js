@@ -61,8 +61,14 @@ export async function POST(request) {
       firstTweetUrl: `https://twitter.com/viral_pulseme/status/${tweetIds[0]}`,
     })
   } catch (err) {
-    return Response.json({ status: 'error', error: err.message }, { status: 500 })
-  }
+  console.error('[POST ERROR]', err?.data || err?.message || err)
+  return Response.json({ 
+    status: 'error', 
+    error: err.message,
+    twitterError: err?.data,  // shows Twitter's actual rejection reason
+    code: err?.code
+  }, { status: 500 })
+}
 }
 
 export async function GET() {
