@@ -43,7 +43,7 @@ export async function POST(request) {
         topic: thread.topic,
         vibe: thread.vibe,
         tweets: thread.tweets,
-        tweetsFormatted: thread.tweets.join('\n\n---\n\n'),
+        tweetsFormatted: thread.tweets.map((t, i) => `<p><b>Tweet ${i + 1}:</b><br>${t.replace(/\n/g, '<br>')}</p>`).join('<hr>'),
     note: 'Set dry_run: false to actually post this thread',
         note: 'Set dry_run: false to actually post this thread',
       })
